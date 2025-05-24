@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Test_Taste_Console_Application.Constants;
 using Test_Taste_Console_Application.Domain.Objects;
@@ -176,7 +177,7 @@ namespace Test_Taste_Console_Application.Domain.Services
 
             ConsoleWriter.CreateLine(columnSizes);
             ConsoleWriter.CreateEmptyLines(2);
-            
+
             /*
                 --------------------+--------------------------------------------------
                 Planet's Number     |Planet's Average Moon Gravity
@@ -184,6 +185,28 @@ namespace Test_Taste_Console_Application.Domain.Services
                 1                   |0.0f
                 --------------------+--------------------------------------------------
             */
+            PrintFunMoonFact();
         }
+        private void PrintFunMoonFact()
+        {
+            var facts = new[]
+            {
+        " The Moon always shows Earth the same face.",
+        " Some moons have atmospheres — Titan even has weather!",
+        " Jupiter's Ganymede is the largest moon in the solar system.",
+        " Earth's Moon is slowly drifting away — about 3.8 cm per year!",
+        " Triton, Neptune’s largest moon, orbits backwards!"
+            };
+
+            var random = new Random();
+            string fact = facts[random.Next(facts.Length)];
+
+            Console.WriteLine();
+            Console.WriteLine("Fun Moon Fact: " + fact + "\n");
+        }
+
+
+
+
     }
 }
